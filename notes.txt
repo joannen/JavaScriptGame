@@ -1,0 +1,19 @@
+Projekt - spel
+
+Funderinga:
+* helt i konsol eller helt i prompt
+
+
+array
+* med ord
+    * slumpas
+        * _.shuffle
+* med gissade bokstäver
+* array med ascii-art
+
+prompt
+* skiljer på gissning på bokstav resp. gissning på ord
+    * lowerCase, trim
+
+counter
+* antal gissningar 
