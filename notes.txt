@@ -16,4 +16,13 @@ prompt
     * lowerCase, trim
 
 counter
-* antal gissningar 
+* antal gissningar
+
+
+Flow:
+
+1. Välkommst meddelande i console.
+2. Visa ord med streck i console.
+3. Spel start i (Promt). Gissa bokstav eller ord.
+4. Om fel bokstav, rita ut gubb del. Om rätt bokstav fyll i på strecket.
+        _*_*_*_*_*fortsätt tills spel är slut!_*_*_*_*_*_*_*_*
