@@ -1,5 +1,4 @@
 hangman.ui = {};
-hangman.ui = {};
 
 hangman.ui.printEmptyBoard = function(nrOfLetters){
   var emptyBoard = [];
@@ -10,7 +9,8 @@ hangman.ui.printEmptyBoard = function(nrOfLetters){
   return emptyBoard;
 };
 
-hangman.ui.printBoard = function(board){
+hangman.ui.printBoard = function(board, guesses){
+  hangman.pic(guesses);
   console.log(board.join(' '));
   return board;
 };
