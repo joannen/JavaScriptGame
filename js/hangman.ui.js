@@ -1,12 +1,12 @@
 hangman.ui = {};
 
-hangman.ui.printEmptyBoard = function(nrOfLetters) {
-    var emptyBoard = [];
-    for (var i = 0; i < nrOfLetters; i++) {
-        emptyBoard.push('_');
-    }
-    console.log(emptyBoard.join(' '));
-    return emptyBoard;
+hangman.ui.printEmptyBoard = function(nrOfLetters){
+  var emptyBoard = [];
+  for (var i =0; i < nrOfLetters; i++){
+    emptyBoard.push('_');
+  }
+  console.log(emptyBoard.join(' '));
+  return emptyBoard;
 };
 
 hangman.ui.guessPrompt = function() {
@@ -23,5 +23,5 @@ hangman.ui.defeateAlert = function() {
 };
 
 hangman.ui.notValidGuessAlert = function() {
-    alert('Not a letter or wrong word lenght. Seriousley how stupid are you?');
+    alert('Not a letter or wrong word lenght. Seriously how stupid are you?');
 };
