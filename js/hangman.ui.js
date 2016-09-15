@@ -9,5 +9,6 @@ hangman.ui.printEmptyBoard = function(nrOfLetters) {
 };
 
 hangman.ui.guessPrompt = function() {
-    var guess = prompt('Please guess on a letter or word: ');
+    var guess = prompt('Please guess a letter or word: ');
+    return guess;
 };
