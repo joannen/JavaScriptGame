@@ -1,4 +1,5 @@
 hangman.ui = {};
+
 hangman.ui.printEmptyBoard = function(nrOfLetters) {
     var emptyBoard = [];
     for (var i = 0; i < nrOfLetters; i++) {
