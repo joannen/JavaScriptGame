@@ -2,8 +2,8 @@ hangman.words = (function() {
 
     var words = [];
 
-    words.push('bajs');
-    words.push('kiss');
+    words.push('corn');
+    words.push('tomato');
     words.push('nyckelpiga');
     words.push('spyfluga');
 
