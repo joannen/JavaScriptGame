@@ -10,6 +10,11 @@ hangman.ui.printEmptyBoard = function(nrOfLetters){
   return emptyBoard;
 };
 
+hangman.ui.printBoard = function(board){
+
+  console.log(board.join(' '));
+};
+
 hangman.ui.guessPrompt = function() {
     var guess = prompt('Please guess a letter or word: ');
     return guess;
