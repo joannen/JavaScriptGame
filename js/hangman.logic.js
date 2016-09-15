@@ -1,7 +1,7 @@
 hangman.logic = {};
 
 hangman.logic.fillBoard = function(guess, board, word){
-  var currentBoard = board.slice();
+  var currentBoard = board;
 
   if(_.contains(word, guess)){
     for(var i =0; i < word.length; i++){

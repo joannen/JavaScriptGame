@@ -5,8 +5,9 @@ hangman.play = function() {
     var wrongGuessCounter = 0;
     var maxWrongGuesses = 6;
     var board = hangman.ui.printEmptyBoard(word.length);
+    
 
-    while (wrongGuessCounter<maxWrongGuesses){
+    while (wrongGuessCounter < maxWrongGuesses){
 
       var guess = hangman.ui.guessPrompt();
       board = hangman.ui.printBoard(hangman.logic.fillBoard(guess, board, word));

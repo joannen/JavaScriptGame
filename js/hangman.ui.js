@@ -11,8 +11,8 @@ hangman.ui.printEmptyBoard = function(nrOfLetters){
 };
 
 hangman.ui.printBoard = function(board){
-
   console.log(board.join(' '));
+  return board;
 };
 
 hangman.ui.guessPrompt = function() {
