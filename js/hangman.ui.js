@@ -9,5 +9,18 @@ hangman.ui.printEmptyBoard = function(nrOfLetters) {
 };
 
 hangman.ui.guessPrompt = function() {
-    var guess = prompt('Please guess on a letter or word: ');
+    var guess = prompt('Please guess a letter or word: ');
+    return guess;
+};
+
+hangman.ui.winAlert = function() {
+    alert('Yeay you won this awesome game, yeay :)');
+};
+
+hangman.ui.defeateAlert = function() {
+    alert('Neay you lost this awesome game, you suck :/');
+};
+
+hangman.ui.notValidGuessAlert = function() {
+    alert('Not a letter or wrong word lenght. Seriousley how stupid are you?');
 };
