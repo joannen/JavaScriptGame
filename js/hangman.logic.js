@@ -1,17 +1,24 @@
 hangman.logic = {};
 
-hangman.logic.fillBoard = function(guess, board, word){
-  var currentBoard = board;
 
-  if(_.contains(word, guess)){
-    for(var i =0; i < word.length; i++){
-      if(word[i]===guess){
-        currentBoard[i]=guess;
-      }
+hangman.logic.wordContainsLetter = function(word, letter){
+  return _.contains(word, letter);
+};
+
+hangman.ui.checkInput = function(guess, word){
+  guess = guess.trim().toLowerCase();
+  if(isLetter(guess)){
+    if(_.contains(word, guess)){
+      hangman.
     }
   }
-  return currentBoard;
+
 };
+
+hangman.ui.isLetter = function(guess){
+  return guess.length === 1 && guess.match(/[a-z]/i);
+};
+
 
 // hangman.logic.fillBoard = function(guess, board, word) {
 //
