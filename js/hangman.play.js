@@ -1,20 +1,11 @@
 hangman.play = function() {
 
-    console.log('I got a word for you!');
-    var word = hangman.words;
-    var wrongGuessCounter = 0;
-    var maxWrongGuesses = 6;
-    var board = hangman.ui.printEmptyBoard(word.length);
+    var playing = true;
+    var game = hangman.logic.setUpGame();
 
-
-    while (wrongGuessCounter <= maxWrongGuesses){
-
-      var guess = hangman.ui.guessPrompt();
-      board = hangman.ui.printBoard(hangman.logic.fillBoard(guess, board, word), wrongGuessCounter);
-      wrongGuessCounter ++;
-
-    };
-
-
-
+    while (playing) {
+        var guess = hangman.ui.guessPrompt();
+        game.board =hangman.logic.playOneTurn(game.word, game.board, guess, game.guessedLetters);
+        playing = !hangman.logic.gameOver(guess, game.word, game.board);
+    }
 };

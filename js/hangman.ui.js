@@ -1,18 +1,33 @@
 hangman.ui = {};
 
-hangman.ui.printEmptyBoard = function(nrOfLetters){
-  var emptyBoard = [];
-  for (var i =0; i < nrOfLetters; i++){
-    emptyBoard.push('_');
-  }
-  console.log(emptyBoard.join(' '));
-  return emptyBoard;
+hangman.ui.printEmptyBoard = function(nrOfLetters) {
+    var emptyBoard = [];
+    for (var i = 0; i < nrOfLetters; i++) {
+        emptyBoard.push('_');
+    }
+    hangman.pic(0);
+    console.log(emptyBoard.join(' '));
+    console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
+    return emptyBoard;
 };
 
-hangman.ui.printBoard = function(board, guesses){
-  hangman.pic(guesses);
-  console.log(board.join(' '));
-  return board;
+hangman.ui.fillBoard = function(guess, board, word) {
+    var currentBoard = board;
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] === guess) {
+            currentBoard[i] = guess;
+        }
+    }
+    return currentBoard;
+};
+
+hangman.ui.printBoard = function(board, guesses, guessedLetters) {
+    hangman.pic(guesses);
+    console.log("Wrong guesses: "+ guessedLetters.join(' '));
+    console.log(board.join(' '));
+    console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    return board;
 };
 
 hangman.ui.guessPrompt = function() {
