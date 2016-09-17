@@ -5,7 +5,9 @@ hangman.play = function() {
 
     while (playing) {
         var guess = hangman.ui.guessPrompt();
-        game.board =hangman.logic.playOneTurn(game.word, game.board, guess, game.guessedLetters);
-        playing = !hangman.logic.gameOver(guess, game.word, game.board);
+        //checks guess, prints board
+        game.board =hangman.logic.playOneTurn(game, guess);
+        //checks if player has won or lost
+        playing = !hangman.logic.gameOver(guess, game);
     }
 };

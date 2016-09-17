@@ -12,22 +12,24 @@ hangman.ui.printEmptyBoard = function(nrOfLetters) {
     return emptyBoard;
 };
 
-hangman.ui.fillBoard = function(guess, board, word) {
-    var currentBoard = board;
-    for (var i = 0; i < word.length; i++) {
-        if (word[i] === guess) {
-            currentBoard[i] = guess;
+hangman.ui.fillBoard = function(guess, game) {
+    console.log(game);
+    // var currentBoard = game.board;
+    for (var i = 0; i < game.word.length; i++) {
+        if (game.word[i] === guess) {
+            game.board[i] = guess;
         }
     }
-    return currentBoard;
+    // return currentBoard;
+   return game;
 };
 
-hangman.ui.printBoard = function(board, guesses, guessedLetters) {
-    hangman.pic(guesses);
-    console.log("Wrong guesses: "+ guessedLetters.join(' '));
-    console.log(board.join(' '));
+hangman.ui.printBoard = function(game) {
+    hangman.pic(game.wrongGuessCounter);
+    console.log("Wrong guesses: "+ game.guessedLetters.join(' '));
+    console.log(game.board.join(' '));
     console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    return board;
+    return game.board;
 };
 
 hangman.ui.guessPrompt = function() {

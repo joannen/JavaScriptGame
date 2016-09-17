@@ -1,7 +1,6 @@
 hangman.logic = {};
 
 hangman.logic.maxWrongGuesses = 6;
-hangman.logic.wrongGuessCounter = 0;
 
 hangman.logic.setUpGame = function() {
     var game = {};
@@ -12,20 +11,21 @@ hangman.logic.setUpGame = function() {
     return game;
 };
 
-hangman.logic.playOneTurn = function(word, board, guess, guessedLetters) {
+hangman.logic.playOneTurn = function(game, guess) {
+  if(this.isValid(guess, game.word)){
     if (hangman.logic.isLetter(guess)) {
-        if (!_.contains(word, guess)) {
-            guessedLetters.push(guess);
-            this.wrongGuessCounter++;
+        if (!_.contains(game.word, guess)) {
+            game.guessedLetters.push(guess);
+            game.wrongGuessCounter++;
         }
     }
-    return hangman.ui.printBoard(hangman.ui.fillBoard(guess, board, word), this.wrongGuessCounter, guessedLetters);
+  }
+  return hangman.ui.printBoard(hangman.ui.fillBoard(guess, game));
 };
 
-hangman.logic.gameOver = function(guess, word, board){
-  return this.hasWon(guess, word, board) || this.hasLost(this.maxWrongGuesses, this.wrongGuessCounter);
+hangman.logic.gameOver = function(guess, game){
+  return this.hasWon(guess, game) || this.hasLost(this.maxWrongGuesses, game.wrongGuessCounter);
 };
-
 
 hangman.logic.isLetter = function(guess) {
     return guess.length === 1 && guess.match(/[a-z]/i);
@@ -40,8 +40,8 @@ hangman.logic.isValid = function(guess, word) {
     }
 };
 
-hangman.logic.hasWon = function(guess, word, board) {
-    if (guess==word | board.join("") === word) {
+hangman.logic.hasWon = function(guess,game) {
+    if (guess === game.word || game.board.join("") === game.word) {
         hangman.ui.winAlert();
         return true;
     }
