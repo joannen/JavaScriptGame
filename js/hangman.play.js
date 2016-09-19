@@ -5,8 +5,9 @@ hangman.play = function() {
     while (!quitGame) {
         var playing = true;
         var game = hangman.logic.setUpGame();
+        hangman.ui.startPrompt();
         while (playing) {
-            hangman.ui.startPrompt();
+            // hangman.ui.startPrompt();
             var guess = hangman.ui.guessPrompt();
             //checks guess, prints board
             game.board = hangman.logic.playOneTurn(game, guess);
