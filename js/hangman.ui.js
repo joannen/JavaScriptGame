@@ -48,3 +48,7 @@ hangman.ui.defeateAlert = function() {
 hangman.ui.notValidGuessAlert = function() {
     alert('Not a letter or wrong word lenght. Seriously how stupid are you?');
 };
+
+hangman.ui.playAgainAlert = function(){
+  prompt('Do you want to play another game? Enter Y to keep playing, enter E to exit');
+}

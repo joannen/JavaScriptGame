@@ -55,3 +55,14 @@ hangman.logic.hasLost = function(wrongGuesses, maxGuesses) {
     }
     return false;
 };
+
+hangman.logic.playAgain = function(playAgain){
+  switch (playAgain){
+    case 'Y'.trim().toLowerCase():
+      return false;
+    case 'E'.trim().toLowerCase():
+      return true;
+    default:
+      return true;
+  }
+};
