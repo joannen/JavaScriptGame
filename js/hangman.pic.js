@@ -1,5 +1,5 @@
-hangman.pic = function(num){
-var hangmanpics = [`
+hangman.pic = function(num) {
+    var hangmanpics = [`
    +---+
    |   |
        |
@@ -8,14 +8,14 @@ var hangmanpics = [`
        |
  =========`,
 
-`  +---+
+        `  +---+
    |   |
    O   |
        |
        |
        |
  =========`,
- `
+        `
 
    +---+
    |   |
@@ -24,7 +24,7 @@ var hangmanpics = [`
        |
        |
  =========`,
- `
+        `
 
    +---+
    |   |
@@ -33,7 +33,7 @@ var hangmanpics = [`
        |
        |
  =========`,
- `
+        `
 
    +---+
    |   |
@@ -42,7 +42,7 @@ var hangmanpics = [`
        |
        |
  =========`,
- `
+        `
 
    +---+
    |   |
@@ -51,7 +51,7 @@ var hangmanpics = [`
   /    |
        |
  =========`,
- `
+        `
 
    +---+
    |   |
@@ -59,7 +59,8 @@ var hangmanpics = [`
   /|\\  |
   / \\  |
        |
- =========`];
- console.log(hangmanpics[num]);
+ =========`
+    ];
+    console.log(hangmanpics[num]);
 
 };

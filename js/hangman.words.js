@@ -1,11 +1,6 @@
 hangman.words = (function() {
 
-    var words = [];
-
-    words.push('bajs');
-    words.push('kiss');
-    words.push('nyckelpiga');
-    words.push('spyfluga');
+    var words = ['nyckelpiga', 'kanin', 'gris', 'julgran', 'sten', 'blomkruka', 'byxor'];
 
     var word = _.sample(words);
     return word;
