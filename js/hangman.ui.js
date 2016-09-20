@@ -30,7 +30,7 @@ hangman.ui.printBoard = function(game) {
 };
 
 hangman.ui.startPrompt = function() {
-    alert('Welcome to play the Hangman game! Press OK to continue.');
+    alert('Welcome to play the Hangman game! You can guess wrong 5 times before you lose the game. Press OK to continue.');
 };
 
 hangman.ui.guessPrompt = function() {

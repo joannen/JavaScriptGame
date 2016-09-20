@@ -7,11 +7,9 @@ hangman.play = function() {
         var game = hangman.logic.setUpGame();
         hangman.ui.startPrompt();
         while (playing) {
-            // hangman.ui.startPrompt();
             var guess = hangman.ui.guessPrompt();
             //checks guess, prints board
             game.board = hangman.logic.playOneTurn(game, guess);
-
             playing = !hangman.logic.gameOver(guess, game);
         }
         quitGame = hangman.logic.playAgain(hangman.ui.playAgainPrompt());
